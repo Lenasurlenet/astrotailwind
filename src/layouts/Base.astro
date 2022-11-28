@@ -1,0 +1,31 @@
+---
+export interface Props {
+	title: string;
+}
+interface Props {
+	title: string;
+}
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title} / Astrotail</title>
+	</head>
+	<body class="bg-slate-900">
+		<slot />
+		<footer class="max-w-7xl text-center">
+      <small>Copyright © <span id="copyrightYear"></span>Nice Astro Starter</small>
+    </footer>
+
+		<script>
+			document.querySelector('#copyrightYear').textContent = new Date().getFullYear();
+		</script>
+	</body>
+</html>
+
