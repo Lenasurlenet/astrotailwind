@@ -1,0 +1,32 @@
+---
+const items = [
+  {
+    navLink: 'Projects',
+    path: '/projects'
+  },
+  {
+    navLink: 'Blog',
+    path: '/blog'
+  },
+  {
+    navLink: 'About',
+    path: '/about'
+  },
+];
+---
+
+<div class="navbarWrapper bg-gray-50 text-gray-900">
+  <div class="flex items-center max-w-7xl px-6">
+    <div class="logoWrapper font-bold text-xl">
+      Astrotailwind
+    </div>
+    <div class="ml-auto flex">  
+      <ul class="flex">
+        {items.map(item => (
+          <li class="p-4 block hover:bg-pink"><a href={item.path}>{item.navLink}</a></li>
+        ))}
+      </ul>
+      <button type="button"><a href="" target="_blank" rel="noopener noreferrer"></a></button>
+    </div>
+  </div>
+</div>
